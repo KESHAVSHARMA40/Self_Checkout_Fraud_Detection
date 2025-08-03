@@ -26,6 +26,33 @@ export default function CheckoutPage() {
 
   const total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
 
+  // Checkout button handler
+  const handleCheckout = async () => {
+    console.log("Checkout clicked!");
+    if (cart.length === 0) {
+      alert("Cart is empty!");
+      return;
+    }
+    try {
+      const response = await fetch("/api/saveTransaction", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: cart, total }),
+      });
+
+      if (response.ok) {
+        alert("Transaction saved successfully!");
+        setCart([]);
+      } else {
+        alert("Failed to save transaction.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error saving transaction.");
+    }
+  };
+
+
   return (
     <div className="container">
       <h1 className="title">🛒 Walmart Self-Checkout</h1>
@@ -65,7 +92,7 @@ export default function CheckoutPage() {
           <span>${total}</span>
         </div>
         <div className="cart-actions">
-          <button className="btn checkout-btn">Checkout</button>
+          <button onClick={handleCheckout}>Checkout</button>
           <button className="btn clear-btn" onClick={() => setCart([])}>
             Clear Cart
           </button>
