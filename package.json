@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "netlify-cli": "^23.0.0"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
   }
 }
