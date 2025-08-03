@@ -1,6 +1,8 @@
 [build]
+  command = "npm run build"       # or "yarn build"
   functions = "netlify/functions"
-  publish = "build"
+  publish = "dist"                # For Vite projects, or "build" for CRA
+
 
 [[redirects]]
   from = "/api/*"
