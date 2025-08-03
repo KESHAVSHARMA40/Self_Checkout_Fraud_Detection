@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"       # or "yarn build"
   functions = "netlify/functions"
-  publish = "dist"                # For Vite projects, or "build" for CRA
+  publish = "client/dist"                # For Vite projects, or "build" for CRA
 
 
 [[redirects]]

@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "North York",
+			"country": {
+				"code": "CA",
+				"name": "Canada"
+			},
+			"subdivision": {
+				"code": "ON",
+				"name": "Ontario"
+			},
+			"timezone": "America/Toronto",
+			"latitude": 43.7806,
+			"longitude": -79.3503,
+			"postalCode": "M2J"
+		},
+		"timestamp": 1754214399845
+	}
+}
